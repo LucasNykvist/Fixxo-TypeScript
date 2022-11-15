@@ -1,0 +1,90 @@
+@import '../other/Variables';
+
+.latest-best-top {
+    margin-top: 3rem;
+
+    .container {
+        max-width: 1130px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .product-boxes-small {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            h3 {
+                font-size: $font-size-20;
+                font-weight: $font-weight-bold;
+            }
+
+            .product-box-small {
+                display: flex;
+
+                .product-box-small-card {
+                    width: 160px;
+                    height: 132px;
+                    background-color: #F5F5F5;
+
+                    img {
+                        width: 160px;
+                        height: 132px;
+                    }
+                }
+
+                .product-box-small-info {
+                    margin-left: 10px;
+                    width: 140px;
+                    height: 132px;
+
+                    .category-sm {
+                        margin: 0;
+                        font-size: 13px;
+                        font-weight: $font-weight-medium;
+                        color: #616365;
+                    }
+
+                    h4 {
+                        margin: 5px 0 0 0;
+                        font-size: $font-size-16;
+                        font-weight: $font-weight-semiBold;
+                    }
+
+                    ul {
+                        font-size: 14px;
+                        gap: 3px;
+                        margin: 10px 0 0 0;
+                        color: #FF7373;
+                        padding: 0;
+                        display: flex;
+                        list-style: none;
+                    }
+
+                    .price {
+                        margin: 16px 0 0 0;
+                        font-size: 18px;
+                        font-weight: $font-weight-semiBold;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 970px) {
+    .latest-best-top {
+        .container {
+            max-width: 1130px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .product-boxes-small {
+                margin-top: 2rem;
+            }
+        }
+    }
+}
