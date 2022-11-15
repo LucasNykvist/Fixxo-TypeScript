@@ -21,7 +21,7 @@ const WinterNew = () => {
                         <Button link="/products" />
                     </div>
 
-                    <img src={image2} />
+                    <img src={image2} alt="something" />
                 </div>
 
             </div>

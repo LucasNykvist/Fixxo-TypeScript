@@ -1,0 +1,104 @@
+@import '../Variables';
+
+.product-box {
+    width: 255px;
+
+    .product-card {
+        width: 255px;
+        height: 210px;
+        background: #f5f5f5;
+        position: relative;
+        overflow: hidden;
+        object-fit: scale-down;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &:hover {
+            .card-menu {
+                top: 3%;
+                right: 5%;
+            }
+
+            .quick-view {
+                bottom: 12px;
+            }
+        }
+
+        .card-menu {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            top: 120%;
+            right: 5%;
+            background-color: transparent;
+            transition: 0.3s ease-in-out;
+
+            .menu-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 36px;
+                height: 36px;
+                background-color: white;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: #23262A;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #23262A;
+                    color: white;
+                }
+            }
+        }
+
+        .quick-view {
+            position: absolute;
+            bottom: -1010px;
+            height: 45px;
+            width: 100%;
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .category {
+            color: #616365;
+            font-size: $font-size-13;
+            font-weight: $font-weight-medium;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            font-size: $font-size-16;
+            font-weight: $font-weight-semiBold;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: $font-weight-semiBold;
+            margin: 0;
+        }
+
+
+        ul {
+            color: #FF7373;
+            padding: 0;
+            margin: 0;
+            gap: 5px;
+            display: flex;
+            list-style: none;
+        }
+    }
+}
