@@ -1,0 +1,59 @@
+@import '../other/Variables';
+
+.featured-sale {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1680px;
+
+        .big-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            background-color: #BBBBBB;
+            min-width: 825px;
+            min-height: 200px;
+
+            h1 {
+                font-size: $font-size-45;
+                font-weight: $font-weight-bold;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .featured-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-left: 1rem;
+            max-width: 573px;
+        }
+    }
+}
+
+
+
+@media (max-width: 1456px) {
+    .featured-sale {
+        justify-content: center;
+
+        .container {
+            justify-content: center;
+
+            .featured-boxes {
+                justify-content: center;
+                margin-top: 2rem;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    }
+}

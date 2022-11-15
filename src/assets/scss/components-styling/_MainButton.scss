@@ -1,0 +1,39 @@
+@import '../other/Variables';
+
+.main-button {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF7373;
+    color: white;
+    padding: 20px 50px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #222529;
+        color: white;
+    }
+
+    .btn-left {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        height: 20px;
+        width: 20px;
+        border-left: 2.5px solid white;
+        border-top: 2.5px solid white;
+    }
+
+    .btn-right {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        height: 20px;
+        width: 20px;
+        border-right: 2.5px solid white;
+        border-bottom: 2.5px solid white;
+    }
+}

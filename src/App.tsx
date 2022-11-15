@@ -2,17 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
 import HomeView from './views/HomeView';
-import { ProductProvider } from './contexts/productContext';
 
 function App() {
 
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
+      setProducts(await result.json())
+    }
+    fetchAllProducts()
+
+  }, [])
+
   return (
     <BrowserRouter>
-      <ProductProvider>
-        <Routes>
-          <Route path='/' element={<HomeView />} />
-        </Routes>
-      </ProductProvider>
+      <Routes>
+        <Route path='/' element={<HomeView products={products} />} />
+      </Routes>
     </BrowserRouter>
   );
 }

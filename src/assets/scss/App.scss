@@ -1,5 +1,6 @@
 // Component Styling
 @import './components-styling/Button';
+@import './components-styling/MainButton';
 @import './components-styling/NavIcon';
 @import './components-styling/SpecialtyBox';
 @import './components-styling/ProductBox';
@@ -12,12 +13,15 @@
 @import './sections-styling/FeaturedProduct';
 @import './sections-styling/PicksFlashSale';
 @import './sections-styling/OurSpecialty';
+@import './sections-styling/FeaturedSale';
+@import './sections-styling/FeaturedSaleReverse';
+@import './sections-styling/SeventyOff';
 
 
 // Variables
 
-@import './Variables';
+@import './other/Variables';
 
 // Core
 
-@import './Core';
+@import './other/Core';

@@ -1,10 +1,8 @@
 import React from 'react'
+import { ProductContextType } from '../@types/products'
 import ProductBox from '../components/ProductBox'
-import { useProductContext } from '../contexts/productContext'
 
-const FeaturedProduct: React.FC<{ title: string }> = ({ title }) => {
-
-    const { products } = useProductContext()
+const FeaturedProduct: React.FC<{ title: string, products: any }> = ({ title, products }) => {
 
     return (
         <div className='featured-product'>
@@ -16,7 +14,7 @@ const FeaturedProduct: React.FC<{ title: string }> = ({ title }) => {
 
                 <div className='product-boxes'>
                     {
-                        products.filter((products: any, index: number) => index < 8).map((products: any, index: React.Key | null | undefined) => <ProductBox key={index} product={products} />)
+                        products.filter((products: object, index: number) => index < 8).map((products: any, index: React.Key | null | undefined) => <ProductBox key={index} product={products} />)
                     }
                 </div>
             </div>
