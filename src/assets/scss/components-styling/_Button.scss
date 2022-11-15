@@ -1,0 +1,84 @@
+.btn-theme {
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF7373;
+    color: white;
+    padding: 20px 50px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #222529;
+        color: white;
+    }
+
+    .btn-theme-left {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        height: 20px;
+        width: 20px;
+        border-left: 2.5px solid white;
+        border-top: 2.5px solid white;
+    }
+
+    .btn-theme-right {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        height: 20px;
+        width: 20px;
+        border-right: 2.5px solid white;
+        border-bottom: 2.5px solid white;
+    }
+}
+
+.btn-light {
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #222529;
+    padding: 20px 50px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #222529;
+        color: white;
+
+        .btn-theme-left {
+            border-left: 2.5px solid #ffffff;
+            border-top: 2.5px solid #ffffff;
+        }
+
+        .btn-theme-right {
+            border-right: 2.5px solid #ffffff;
+            border-bottom: 2.5px solid #ffffff;
+        }
+    }
+
+    .btn-theme-left {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        height: 20px;
+        width: 20px;
+        border-left: 2.5px solid #222529;
+        border-top: 2.5px solid #222529;
+    }
+
+    .btn-theme-right {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        height: 20px;
+        width: 20px;
+        border-right: 2.5px solid #222529;
+        border-bottom: 2.5px solid #222529;
+    }
+
+}

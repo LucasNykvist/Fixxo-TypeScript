@@ -1,0 +1,95 @@
+.picksFlashSale {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        .top-picks {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #75695c;
+            width: 49%;
+
+            img {
+                margin-left: 2rem;
+            }
+
+            .picks-info {
+                margin-left: 4rem;
+
+                h1 {
+                    width: 80%;
+                    color: white;
+                    font-size: 45px;
+                    font-weight: bold;
+                    margin-bottom: 4rem;
+                }
+
+            }
+
+        }
+
+        .flash-sale {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d9d9d9;
+            width: 49%;
+
+            .flash-info {
+                margin-left: 4rem;
+
+                h1 {
+                    margin-bottom: 3rem;
+                    font-size: 45px;
+                    font-weight: bold;
+                }
+            }
+
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .picksFlashSale {
+        .container {
+            flex-direction: column;
+
+            .top-picks {
+                width: 100%;
+            }
+
+            .flash-sale {
+                width: 100%;
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 992px) {
+
+    .top-picks {
+        height: 20rem;
+    }
+
+    .flash-sale {
+        height: 20rem;
+    }
+
+    .top-picks-image {
+        display: none;
+    }
+
+    .flash-sale-image {
+        display: none;
+    }
+}

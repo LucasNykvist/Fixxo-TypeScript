@@ -1,0 +1,39 @@
+.our-specialty {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+
+    .container {
+        max-width: 89%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #F5F5F5;
+
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .specialty-boxes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+    }
+
+
+}
+
+@media (max-width: 570px) {
+    .our-specialty {
+        .container {
+            max-width: 100%;
+        }
+    }
+}

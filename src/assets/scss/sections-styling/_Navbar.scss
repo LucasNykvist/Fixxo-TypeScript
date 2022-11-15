@@ -1,0 +1,101 @@
+.__navbar {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    // position: fixed;
+    width: 100%;
+
+    .container {
+        max-width: 1688px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            color: #222529;
+
+            a {
+                text-decoration: none;
+                color: #222529;
+                font-weight: 500;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    color: #FF7373;
+                }
+            }
+
+            .active {
+                color: #FF7373;
+            }
+        }
+
+        .shopping-icons {
+            display: flex;
+            gap: 1.2rem;
+
+            a {
+                color: #222529;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                background-color: white;
+                border-radius: 50%;
+                font-size: 20px;
+                padding: 1.2rem;
+                width: 36px;
+                height: 36px;
+                -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.34);
+                box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.34);
+                transition: 0.3s ease-in-out;
+                position: relative;
+
+                &:hover {
+                    background-color: #222529;
+                    color: white;
+                }
+            }
+
+            .active {
+                background-color: #222529;
+                color: white;
+            }
+        }
+    }
+}
+
+.nav-icon {
+    position: relative;
+
+    .quantity {
+        top: -10px;
+        left: 25px;
+        position: absolute;
+    }
+}
+
+@media (max-width: 770px) {
+    .__navbar {
+        .container {
+            flex-wrap: wrap;
+        }
+
+
+        .nav-links {
+            position: absolute;
+            top: 80px;
+            left: 0;
+            padding-left: 2rem;
+            padding-bottom: 1rem;
+            background-color: white;
+            width: 100%;
+            height: 160px;
+            flex-direction: column;
+        }
+
+    }
+}

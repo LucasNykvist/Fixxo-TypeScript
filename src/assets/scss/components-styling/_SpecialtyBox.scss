@@ -1,0 +1,45 @@
+.specialty-box {
+    display: flex;
+    margin-bottom: 3rem;
+
+    .box-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 245px;
+        height: 232px;
+        background-color: #FFFFFF;
+        padding-left: 1rem;
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #222529;
+        }
+
+        a {
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: underline;
+            color: #222529;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                color: #FF7373;
+            }
+        }
+
+    }
+
+    .box-image {
+        background-color: #BBBBBB;
+        width: 245px;
+        height: 232px;
+    }
+}
+
+@media(max-width:490px) {
+    .specialty-box {
+        flex-direction: column;
+    }
+}
