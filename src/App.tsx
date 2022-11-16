@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
+import { ProductProvider } from './contexts/productsContext';
+import ContactsView from './views/ContactsView';
 import HomeView from './views/HomeView';
 
 function App() {
-
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    const fetchAllProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setProducts(await result.json())
-    }
-    fetchAllProducts()
-
-  }, [])
-
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomeView products={products} />} />
-      </Routes>
+      <ProductProvider>
+        <Routes>
+          <Route path='/' element={<HomeView />} />
+          <Route path='/contacts' element={<ContactsView />} />
+        </Routes>
+      </ProductProvider>
     </BrowserRouter>
   );
 }

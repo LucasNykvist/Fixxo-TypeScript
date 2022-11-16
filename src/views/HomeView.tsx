@@ -1,4 +1,5 @@
 import React from 'react'
+import { useProductContext } from '../contexts/productsContext'
 import FeaturedProduct from '../sections/FeaturedProduct'
 import FeaturedSale from '../sections/FeaturedSale'
 import FeaturedSaleReverse from '../sections/FeaturedSaleReverse'
@@ -12,7 +13,9 @@ import Showcase from '../sections/Showcase'
 import Support from '../sections/Support'
 import WinterNew from '../sections/WinterNew'
 
-const HomeView: React.FC<{ products: any }> = ({ products }) => {
+const HomeView: React.FC = () => {
+
+    const { products } = useProductContext()
 
     return (
         <>
