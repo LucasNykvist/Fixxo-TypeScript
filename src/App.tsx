@@ -4,6 +4,7 @@ import './App.min.css';
 import { ProductProvider } from './contexts/productsContext';
 import ContactsView from './views/ContactsView';
 import HomeView from './views/HomeView';
+import ProductDetailsView from './views/ProductDetailsView';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomeView />} />
           <Route path='/contacts' element={<ContactsView />} />
+          <Route path='/products/:articleNumber' element={<ProductDetailsView />} />
         </Routes>
       </ProductProvider>
     </BrowserRouter>

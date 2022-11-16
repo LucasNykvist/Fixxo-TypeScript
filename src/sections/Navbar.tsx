@@ -29,7 +29,7 @@ const Navbar = () => {
 
                     <button className="nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                         <i className='fa-light fa-bag-shopping position-relative'></i>
-                        <span data-testid="quantity" className='quantity badge rounded-pill'>CQ</span>
+                        <span className='quantity badge rounded-pill'>CQ</span>
                     </button>
 
                     <button onClick={toggleNavMenu} className='d-md-none nav-icon btn-menu-icon'><i className='fa-solid fa-bars'></i></button>
