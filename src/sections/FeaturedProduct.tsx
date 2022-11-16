@@ -1,5 +1,4 @@
 import React from 'react'
-import { ProductContextType } from '../@types/products'
 import ProductBox from '../components/ProductBox'
 
 const FeaturedProduct: React.FC<{ title: string, products: any }> = ({ title, products }) => {

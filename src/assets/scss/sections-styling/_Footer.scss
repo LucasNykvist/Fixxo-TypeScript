@@ -1,0 +1,28 @@
+.footer {
+    width: 100%;
+    margin-top: 3rem;
+    border-top: 1px solid #61636568;
+    background-color: #F8F8F8;
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .social-media {
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+            font-size: 1rem;
+
+            a {
+                color: #000000;
+            }
+        }
+
+        .copyright {
+            margin-bottom: 1rem;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const SecuredPaymentIcon = () => {
     return (
-        <a className='icon-2' href=''><i className="fa-regular fa-shield"></i></a>
+        <span className='icon-2'><i className="fa-regular fa-shield"></i></span>
     )
 }
 
