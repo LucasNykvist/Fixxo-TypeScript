@@ -1,7 +1,11 @@
 import React from 'react'
+import { useShoppingCart } from '../contexts/shoppingCartContext'
 import MainButton from './MainButton'
 
 const ProductBox: React.FC<{ product: any }> = ({ product }) => {
+
+    const { incrementQuantity } = useShoppingCart()
+
     return (
         <div className="product-box">
             <div className="product-card">
@@ -9,7 +13,7 @@ const ProductBox: React.FC<{ product: any }> = ({ product }) => {
                 <div className="card-menu">
                     <button className='nav-icon'><i className="fa-light fa-heart"></i></button>
                     <button className='nav-icon'><i className="fa-light fa-code-compare"></i></button>
-                    <button className='nav-icon'><i className="fa-light fa-bag-shopping"></i></button>
+                    <button onClick={() => incrementQuantity({ articleNumber: product.articleNumber, product: product })} className='nav-icon'><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
 
                 <div className='quick-view'>

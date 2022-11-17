@@ -10,5 +10,5 @@ export interface IProducts {
 
 export type ProductContextType = {
     products: IProducts[],
-    getProducts: fn
+    getProducts: any
 }

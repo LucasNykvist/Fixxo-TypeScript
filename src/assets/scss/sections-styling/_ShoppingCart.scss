@@ -1,0 +1,85 @@
+.shoppingcart {
+    width: 100% !important;
+
+    .shoppingcart-item {
+        margin: 30px 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .item-image {
+            width: 65px;
+            height: 65px;
+            background-color: #f1f1f1;
+
+            img {
+                width: 65px;
+                height: 65px;
+            }
+        }
+
+        .item-info {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+
+            .item-info-name {
+                margin-left: 10px;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+
+            .item-info-quantity {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .btn-left {
+                    border: 1px solid $color-dark-gray;
+                    height: 30px;
+                    width: 30px;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+
+                .btn-right {
+                    border: 1px solid $color-dark-gray;
+                    height: 30px;
+                    width: 30px;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+
+                .quantity {
+                    border-top: 1px solid $color-dark-gray;
+                    border-bottom: 1px solid $color-dark-gray;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 30px;
+                    width: 30px;
+                    background-color: #f1f1f1;
+                }
+            }
+
+            .item-price {
+                font-weight: 500;
+
+                button {
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+
+
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .shoppingcart {
+        width: 500px !important;
+    }
+}

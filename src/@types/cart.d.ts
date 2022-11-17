@@ -1,14 +1,14 @@
 export interface cartItems {
-    quantity: number,
-    articleNumber: string,
-    name: string,
-    price: number,
-    imageName: string
+    quantity?: number,
+    articleNumber?: string,
+    name?: string,
+    price?: number,
+    imageName?: string
 }
 
 export type cartContextType = {
     cartItems: cartItems[],
-    cartQuantity: number,
+    cartQuantity: any,
     getItemQuantity: any,
     incrementQuantity: any,
     decrementQuantity: any,

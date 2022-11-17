@@ -3,11 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 // import Breadcrumb from '../components/Breadcrumb';
 import ProductBox from '../components/ProductBox';
 import { useProductContext } from '../contexts/productsContext';
-// import { useShoppingCart } from '../contexts/ShoppingCartContext';
+import { useShoppingCart } from '../contexts/shoppingCartContext';
 
 const DetailedProduct = () => {
 
     const { products } = useProductContext()
+
+    const { incrementQuantity } = useShoppingCart()
 
     const menuData = [
         {
@@ -97,7 +99,7 @@ const DetailedProduct = () => {
                                             <div className="current">{quantity}</div>
                                             <button onClick={increment} className="increment">+</button>
                                         </div>
-                                        <button>ADD TO CART</button>
+                                        <button onClick={() => incrementQuantity({ articleNumber: detailed.articleNumber, product: detailed })}>ADD TO CART</button>
                                     </div>
                                     <div className="share">
                                         <p>Share:</p>
