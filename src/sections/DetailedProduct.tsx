@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
-// import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../components/BreadCrumb';
 import ProductBox from '../components/ProductBox';
 import { useProductContext } from '../contexts/productsContext';
 import { useShoppingCart } from '../contexts/shoppingCartContext';
@@ -48,7 +48,7 @@ const DetailedProduct = () => {
                         <div className="container">
                             <div className="top">
                                 <div className="sale-offer">Get 25% OFF at the Fixxo Selection - Shop Now!</div>
-                                {/* <Breadcrumb className="breadcrumb" where={`Products/${detailed.name}`} icon="fa-solid fa-house" /> */}
+                                <Breadcrumb where={`Products/${detailed.name}`} icon="fa-solid fa-house" />
                             </div>
 
                             <div className="product">

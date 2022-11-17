@@ -1,0 +1,132 @@
+.contact-form {
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+
+    .container {
+        max-width: 1110px;
+        display: flex;
+        flex-direction: column;
+
+        .submitted-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #d2e7de;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid grey;
+            border-radius: 15px;
+
+
+            h1 {
+                font-weight: 500;
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+        }
+
+        .false {
+            background-color: rgba(255, 0, 0, 0.525);
+            color: white;
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 18px;
+            font-weight: $font-weight-bold;
+        }
+
+        form {
+
+            .name-email {
+                display: flex;
+                justify-content: space-between;
+                // align-items: center;
+                width: 100%;
+                gap: 1.5rem;
+
+                .form-input {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+
+                    .input-error {
+                        background-color: #ff737378;
+                        color: white;
+                    }
+
+                    input {
+                        height: 50px;
+                        width: 100%;
+                        border: 1px solid #c6c6c6;
+                        padding: 1rem;
+                    }
+
+                    .error {
+                        height: 40px;
+                    }
+                }
+
+
+            }
+
+
+            .error-message {
+                margin: 0;
+                padding: 0;
+                color: red;
+                font-weight: $font-weight-semiBold;
+            }
+
+
+            .comments {
+                margin-top: 0.5rem;
+
+                input {
+                    padding: 1rem;
+                    border: 1px solid #c6c6c6;
+                    width: 100%;
+                    height: 140px;
+                }
+
+                .input-error {
+                    background-color: #ff737378;
+                }
+
+                input::placeholder {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 1rem 0 0 1rem;
+                }
+
+
+            }
+
+            button {
+                width: 207px;
+                height: 50px;
+                border: none;
+                background-color: #FF7373;
+                color: white;
+                margin-top: 2rem;
+                font-weight: $font-weight-semiBold;
+                font-size: $font-size-16;
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 645px) {
+    .name-email {
+        flex-wrap: wrap;
+    }
+}

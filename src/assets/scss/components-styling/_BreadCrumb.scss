@@ -1,0 +1,11 @@
+@import '../other/Variables';
+
+.breadcrumb {
+    .container {
+        max-width: 1100px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: $font-weight-medium;
+    }
+}
