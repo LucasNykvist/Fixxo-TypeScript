@@ -19,11 +19,6 @@ export const ProductProvider = ({ children }: any) => {
         setProducts(await res.json())
     }
 
-    console.log(getProducts());
-
-
-
-
     return <ProductContext.Provider value={{ products, getProducts }}>
         {children}
     </ProductContext.Provider>
