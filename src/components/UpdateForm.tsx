@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { UserContext, IuserContext } from '../contexts/UserContext'
 
 const UpdateForm = () => {
-    const { user, setUser, update } = React.useContext(UserContext) as IuserContext
-
+    const id = useParams()
+    const { user, setUser, get, update } = React.useContext(UserContext) as IuserContext
 
 
     return (
