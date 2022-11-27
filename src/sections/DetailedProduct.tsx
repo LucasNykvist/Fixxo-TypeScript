@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import Breadcrumb from '../components/BreadCrumb';
 import ProductBox from '../components/ProductBox';
-import { useProductContext } from '../contexts/productsContext';
+import { IproductHandlerContext, useProductHandlerContext } from '../contexts/ProductHandlingContext';
 import { useShoppingCart } from '../contexts/shoppingCartContext';
 
 const DetailedProduct = () => {
 
-    const { products } = useProductContext()
+    const { products } = useProductHandlerContext() as IproductHandlerContext
 
     const { incrementQuantity } = useShoppingCart()
 

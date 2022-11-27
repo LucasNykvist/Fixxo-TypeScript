@@ -10,7 +10,7 @@ interface navType {
 
 const NavIcon: React.FC<navType> = ({ link, icon, value, hideOnMobile }) => {
     return (
-        <NavLink className={`nav-icon ${hideOnMobile ? "d-none d-md-flex" : ""}`} to={link} end>
+        <NavLink className={`nav-icon ${hideOnMobile ? "d-none d-lg-flex" : ""}`} to={link} end>
             <i className={icon}><span className='badge rounded-pill'>{value}</span></i>
         </NavLink >
     )

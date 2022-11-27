@@ -19,7 +19,7 @@ const Navbar = () => {
                 <NavLink data-testid="logo" to="/">
                     <img src={Logo} alt='' />
                 </NavLink>
-                <div className={`nav-links ${!showNavMenu ? "d-none d-md-flex" : ""}`}>
+                <div className={`nav-links ${!showNavMenu ? "d-none d-lg-flex" : ""}`}>
                     <li><NavLink to="/" end>Home</NavLink></li>
                     <li><NavLink to="/categories" end>Categories</NavLink></li>
                     <li><NavLink to="/products" >Products</NavLink></li>
@@ -38,7 +38,7 @@ const Navbar = () => {
                         <span className='quantity badge rounded-pill'>{cartQuantity}</span>
                     </button>
 
-                    <button onClick={toggleNavMenu} className='d-md-none nav-icon btn-menu-icon'><i className='fa-solid fa-bars'></i></button>
+                    <button onClick={toggleNavMenu} className='d-lg-none nav-icon btn-menu-icon'><i className='fa-solid fa-bars'></i></button>
                 </div>
             </div>
         </nav >

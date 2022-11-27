@@ -1,6 +1,5 @@
 import React from 'react'
 import { IproductHandlerContext, useProductHandlerContext } from '../contexts/ProductHandlingContext'
-import { useProductContext } from '../contexts/productsContext'
 import FeaturedProduct from '../sections/FeaturedProduct'
 import FeaturedSale from '../sections/FeaturedSale'
 import FeaturedSaleReverse from '../sections/FeaturedSaleReverse'
