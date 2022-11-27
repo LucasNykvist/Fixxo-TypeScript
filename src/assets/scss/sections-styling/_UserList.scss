@@ -1,6 +1,13 @@
 .form {
     .container {
+        display: flex;
+        justify-content: center;
+
         form {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+
             h3 {
                 background-color: #FF7373;
                 width: fit-content;
@@ -28,8 +35,11 @@
 }
 
 .user-list {
+
+
     .container {
         display: flex;
+        align-items: center;
         flex-direction: column;
 
         h3 {
@@ -43,6 +53,7 @@
         }
 
         .list-item {
+
             h2 {
                 background-color: #FF7373;
                 padding: 10px;
@@ -58,12 +69,22 @@
                 }
             }
 
+            img {
+                width: 200px;
+            }
+
             .buttons {
                 display: flex;
                 gap: 0.5rem;
 
                 button,
                 .editbtn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.2rem;
                     text-decoration: none;
                     background-color: #222529;
                     border: none;
@@ -74,6 +95,7 @@
 
                     &:hover {
                         background-color: black;
+                        font-size: 1.8rem;
                     }
                 }
             }

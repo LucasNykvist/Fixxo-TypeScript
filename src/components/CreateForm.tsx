@@ -16,7 +16,7 @@ const CreateForm = () => {
                         <input value={userRequest.lastName} onChange={(e) => setUserRequest({ ...userRequest, lastName: e.target.value })} type="text" className='form-control py-2 mb-3' placeholder='Enter Your Last Name' />
                         <input value={userRequest.email} onChange={(e) => setUserRequest({ ...userRequest, email: e.target.value })} type="email" className='form-control py-2 mb-3' placeholder='Enter Your E-mail' />
                         <input value={userRequest.password} onChange={(e) => setUserRequest({ ...userRequest, password: e.target.value })} type="password" className='form-control py-2 mb-3' placeholder='Enter Your Password' />
-                        <button type='submit' className='btn btn-success py-2 mt-3'>Create User</button>
+                        <button type='submit' className='btn btn-success py-2 mt-3'>Create User <i className="fa-solid fa-plus"></i></button>
                     </form>
                 </div>
             </div>

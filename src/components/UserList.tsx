@@ -18,13 +18,13 @@ const UserList = () => {
                     <h3 className='display-6 mb-4'>- ALL USERS -</h3>
                     {
                         users.map((user: User) => (<div key={user.id} className="list-item mb-3">
+                            <h2>ID: <span>{user.id}</span></h2>
                             <h2>FIRST NAME: <span>{user.firstName}</span></h2>
                             <h2>LAST NAME: <span>{user.lastName}</span></h2>
                             <h2>EMAIL: <span>{user.email}</span> </h2>
-                            <h2>ID: <span>{user.id}</span></h2>
                             <div className="buttons">
-                                <Link className='editbtn' to={`/users/update/${user.id}`}>Edit Account</Link>
-                                <button onClick={() => remove(user.id)}>Delete User</button>
+                                <Link className='editbtn' to={`/users/update/${user.id}`}><i className="fa-regular fa-pen-to-square"></i></Link>
+                                <button onClick={() => remove(user.id)}><i className="fa-regular fa-trash"></i></button>
                             </div>
                         </div>))
                     }
