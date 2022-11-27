@@ -1,0 +1,49 @@
+.update-form {
+    margin-top: 2rem;
+
+    .container {
+        .back-link {
+            background-color: #FF7373;
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #23262A;
+            }
+        }
+
+        form {
+            h3 {
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                span {
+                    border-radius: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    background-color: #23262A;
+                    color: white;
+                }
+            }
+
+            input {
+                border: 1px dashed #23262A;
+            }
+
+            button {
+                border: none;
+                background-color: #FF7373;
+                font-size: 20px;
+                width: fit-content;
+
+                &:hover {
+                    background-color: #23262A;
+                }
+            }
+        }
+    }
+}

@@ -7,6 +7,9 @@ const UserView = () => {
     return (
         <>
             <Navbar />
+            <div className="title container">
+                <h1>USER HANDLING</h1>
+            </div>
             <CreateForm />
             <hr className='my-5' />
             <UserList />
