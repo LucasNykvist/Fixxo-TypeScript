@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
+import ProductEdit from './components/ProductEdit';
 import UpdateForm from './components/UpdateForm';
 import ProductHandlingProvider from './contexts/ProductHandlingContext';
 import { ProductProvider } from './contexts/productsContext';
@@ -11,6 +12,7 @@ import ContactsView from './views/ContactsView';
 import HomeView from './views/HomeView';
 import NotFoundView from './views/NotFoundView';
 import ProductDetailsView from './views/ProductDetailsView';
+import ProductHandlerView from './views/ProductHandlerView';
 import ProductsView from './views/ProductsView';
 import UserView from './views/UserView';
 
@@ -28,7 +30,8 @@ function App() {
                 <Route path='/products/:articleNumber' element={<ProductDetailsView />} />
                 <Route path='/users' element={<UserView />} />
                 <Route path='/users/update/:id' element={<UpdateForm />} />
-                <Route path='/productsHandling' element={<ProductHandling />} />
+                <Route path='/productsHandling' element={<ProductHandlerView />} />
+                <Route path='/productsHandling/update/:articleNumber' element={<ProductEdit />} />
                 <Route path='*' element={<NotFoundView />} />
               </Routes>
             </ProductHandlingProvider>

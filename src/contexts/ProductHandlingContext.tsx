@@ -8,7 +8,7 @@ export interface IproductHandlerContext {
     productRequest: ProductRequest,
     setProductRequest: React.Dispatch<React.SetStateAction<ProductRequest>>,
     products: Product[],
-    create: (e: React.FormEvent) => void
+    createProduct: (e: React.FormEvent) => void
     getAll: () => void
     update: (articleNumber: any) => void
     remove: (articleNumber: any) => void
@@ -23,14 +23,14 @@ export const useProductHandlerContext = () => {
 
 const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
     const baseUrl = "http://localhost:5000/api/products"
-    const product_default = { articleNumber: "", imageName: "", category: "", price: 0, name: "", description: "" }
-    const productRequest_default = { imageName: "", category: "", price: 0, name: "", description: "" }
+    const product_default = { articleNumber: "", imageName: "", category: "", price: "", name: "", description: "" }
+    const productRequest_default = { imageName: "", category: "", price: "", name: "", description: "" }
 
     const [product, setProduct] = useState<Product>(product_default)
     const [productRequest, setProductRequest] = useState<ProductRequest>(productRequest_default)
     const [products, setProducts] = useState<Product[]>([])
 
-    const create = async (e: React.FormEvent) => {
+    const createProduct = async (e: React.FormEvent) => {
         e.preventDefault()
 
         const res = await fetch(`${baseUrl}`, {
@@ -75,7 +75,7 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
     }
 
     return (
-        <ProductHandlerContext.Provider value={{ product, setProduct, productRequest, setProductRequest, products, create, getAll, remove, update }}>
+        <ProductHandlerContext.Provider value={{ product, setProduct, productRequest, setProductRequest, products, createProduct, getAll, remove, update }}>
             {children}
         </ProductHandlerContext.Provider>
     )

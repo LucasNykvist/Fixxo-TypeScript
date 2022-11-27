@@ -2,7 +2,7 @@ export interface Product {
     articleNumber: string,
     imageName: string,
     category: string,
-    price: number,
+    price: string,
     name: string,
     description: string
 }
@@ -10,7 +10,7 @@ export interface Product {
 export interface ProductRequest {
     imageName: string,
     category: string,
-    price: number,
+    price: string,
     name: string,
     description: string
 }

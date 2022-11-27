@@ -6,7 +6,6 @@ import Navbar from './Navbar'
 const ProductHandling: React.FC = () => {
     return (
         <>
-            <Navbar />
             <ProductCreation />
             <ProductList />
         </>
