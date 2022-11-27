@@ -22,7 +22,7 @@ const ProductEdit = () => {
                         <input value={product.price} onChange={(e) => setProduct({ ...product, price: e.target.value })} type="text" className='form-control py-2 mb-3' placeholder='Update Product Price' />
                         <input value={product.description} onChange={(e) => setProduct({ ...product, description: e.target.value })} type="text" className='form-control py-2 mb-3' placeholder='Update Product Description' />
                         <input value={product.imageName} onChange={(e) => setProduct({ ...product, imageName: e.target.value })} type="text" className='form-control py-2 mb-3' placeholder='Update Product Image' />
-                        <button type='submit' className='btn btn-success py-2 mt-3'>Update User</button>
+                        <button type='submit' className='btn btn-success py-2 mt-3'>Update Product</button>
                     </form>
                 </div>
             </div>

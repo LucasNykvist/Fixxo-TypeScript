@@ -1,4 +1,5 @@
 import React from 'react'
+import { IproductHandlerContext, useProductHandlerContext } from '../contexts/ProductHandlingContext'
 import { useProductContext } from '../contexts/productsContext'
 import FeaturedProduct from '../sections/FeaturedProduct'
 import FeaturedSale from '../sections/FeaturedSale'
@@ -15,7 +16,7 @@ import WinterNew from '../sections/WinterNew'
 
 const HomeView: React.FC = () => {
 
-    const { products } = useProductContext()
+    const { products } = useProductHandlerContext() as IproductHandlerContext
 
     return (
         <>

@@ -35,8 +35,6 @@
 }
 
 .user-list {
-
-
     .container {
         display: flex;
         align-items: center;
@@ -53,6 +51,7 @@
         }
 
         .list-item {
+            width: 60%;
 
             h2 {
                 background-color: #FF7373;
@@ -71,6 +70,8 @@
 
             img {
                 width: 200px;
+                border-radius: 10px;
+                margin-bottom: 1rem;
             }
 
             .buttons {

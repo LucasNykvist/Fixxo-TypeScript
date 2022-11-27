@@ -7,7 +7,6 @@ import ProductHandlingProvider from './contexts/ProductHandlingContext';
 import { ProductProvider } from './contexts/productsContext';
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 import UserProvider from './contexts/UserContext';
-import ProductHandling from './sections/ProductHandling';
 import ContactsView from './views/ContactsView';
 import HomeView from './views/HomeView';
 import NotFoundView from './views/NotFoundView';
