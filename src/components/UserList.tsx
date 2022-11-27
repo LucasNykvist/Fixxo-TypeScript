@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { IuserContext, UserContext } from '../contexts/UserContext'
 import { User } from '../models/UserModel'
 
 const UserList = () => {
 
-    const { users, getAll } = React.useContext(UserContext) as IuserContext
+    const { users, getAll, remove } = React.useContext(UserContext) as IuserContext
 
     useEffect(() => {
         getAll()
@@ -12,15 +13,23 @@ const UserList = () => {
 
     return (
         <>
-            <h3 className='display-6 mb-4'>List of Users</h3>
-            {
-                users.map((user: User) => (<div key={user.id} className="mb-3">
-                    {user.firstName}
-                    {user.lastName}
-                    {user.email}
-                    {user.id}
-                </div>))
-            }
+            <div className="user-list">
+                <div className="container">
+                    <h3 className='display-6 mb-4'>- ALL USERS -</h3>
+                    {
+                        users.map((user: User) => (<div key={user.id} className="list-item mb-3">
+                            <h2>FIRST NAME: <span>{user.firstName}</span></h2>
+                            <h2>LAST NAME: <span>{user.lastName}</span></h2>
+                            <h2>EMAIL: <span>{user.email}</span> </h2>
+                            <h2>ID: <span>{user.id}</span></h2>
+                            <div className="buttons">
+                                <Link className='editbtn' to={`/users/update/${user.id}`}>Edit Account</Link>
+                                <button onClick={() => remove(user.id)}>Delete User</button>
+                            </div>
+                        </div>))
+                    }
+                </div>
+            </div>
         </>
     )
 }

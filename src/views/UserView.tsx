@@ -8,8 +8,6 @@ const UserView = () => {
         <>
             <CreateForm />
             <hr className='my-5' />
-            <UpdateForm />
-            <hr className='my-5' />
             <UserList />
         </>
     )

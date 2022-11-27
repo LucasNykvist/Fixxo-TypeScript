@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
+import UpdateForm from './components/UpdateForm';
 import UserList from './components/UserList';
 import { ProductProvider } from './contexts/productsContext';
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
@@ -24,6 +25,7 @@ function App() {
               <Route path='/products' element={<ProductsView />} />
               <Route path='/products/:articleNumber' element={<ProductDetailsView />} />
               <Route path='/users' element={<UserView />} />
+              <Route path='/users/update/:id' element={<UpdateForm />} />
               <Route path='*' element={<NotFoundView />} />
             </Routes>
           </ProductProvider>
