@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { UserContext, IuserContext } from '../contexts/UserContext'
+import Navbar from '../sections/Navbar'
 
 const UpdateForm = () => {
     const { id } = useParams()
@@ -9,6 +10,7 @@ const UpdateForm = () => {
 
     return (
         <>
+            <Navbar />
             <Link to="/users">Go Back</Link>
             <form onSubmit={() => update(id)} className="d-grid mb-5">
                 <h3 className='display-6 mb-4'>Update User: {id}</h3>

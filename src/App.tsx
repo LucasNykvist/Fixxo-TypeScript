@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
 import UpdateForm from './components/UpdateForm';
-import UserList from './components/UserList';
 import { ProductProvider } from './contexts/productsContext';
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 import UserProvider from './contexts/UserContext';

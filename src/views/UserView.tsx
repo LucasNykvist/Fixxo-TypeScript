@@ -1,11 +1,12 @@
 import React from 'react'
 import CreateForm from '../components/CreateForm'
-import UpdateForm from '../components/UpdateForm'
 import UserList from '../components/UserList'
+import Navbar from '../sections/Navbar'
 
 const UserView = () => {
     return (
         <>
+            <Navbar />
             <CreateForm />
             <hr className='my-5' />
             <UserList />
