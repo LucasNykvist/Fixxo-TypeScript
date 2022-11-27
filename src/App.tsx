@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
 import UpdateForm from './components/UpdateForm';
+import ProductHandlingProvider from './contexts/ProductHandlingContext';
 import { ProductProvider } from './contexts/productsContext';
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';
 import UserProvider from './contexts/UserContext';
+import ProductHandling from './sections/ProductHandling';
 import ContactsView from './views/ContactsView';
 import HomeView from './views/HomeView';
 import NotFoundView from './views/NotFoundView';
@@ -18,15 +20,18 @@ function App() {
       <UserProvider>
         <ShoppingCartProvider>
           <ProductProvider>
-            <Routes>
-              <Route path='/' element={<HomeView />} />
-              <Route path='/contacts' element={<ContactsView />} />
-              <Route path='/products' element={<ProductsView />} />
-              <Route path='/products/:articleNumber' element={<ProductDetailsView />} />
-              <Route path='/users' element={<UserView />} />
-              <Route path='/users/update/:id' element={<UpdateForm />} />
-              <Route path='*' element={<NotFoundView />} />
-            </Routes>
+            <ProductHandlingProvider>
+              <Routes>
+                <Route path='/' element={<HomeView />} />
+                <Route path='/contacts' element={<ContactsView />} />
+                <Route path='/products' element={<ProductsView />} />
+                <Route path='/products/:articleNumber' element={<ProductDetailsView />} />
+                <Route path='/users' element={<UserView />} />
+                <Route path='/users/update/:id' element={<UpdateForm />} />
+                <Route path='/productsHandling' element={<ProductHandling />} />
+                <Route path='*' element={<NotFoundView />} />
+              </Routes>
+            </ProductHandlingProvider>
           </ProductProvider>
         </ShoppingCartProvider>
       </UserProvider>

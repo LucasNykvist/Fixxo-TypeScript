@@ -25,6 +25,7 @@ const Navbar = () => {
                     <li><NavLink to="/products" >Products</NavLink></li>
                     <li><NavLink to="/contacts" end>Contacts</NavLink></li>
                     <li><NavLink to="/users" end>Handle Users</NavLink></li>
+                    <li><NavLink to="/productsHandling" end>Handle Products</NavLink></li>
                 </div>
 
                 <div className='shopping-icons'>
