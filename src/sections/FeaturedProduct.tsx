@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductBox from '../components/ProductBox'
+import { IproductHandlerContext, ProductHandlerContext } from '../contexts/ProductHandlingContext'
 
 const FeaturedProduct: React.FC<{ title: string, products: any }> = ({ title, products }) => {
+
+    const { getAll } = React.useContext(ProductHandlerContext) as IproductHandlerContext
+
+    useEffect(() => {
+        getAll()
+    }, [getAll])
+
 
     return (
         <div className='featured-product'>

@@ -10,8 +10,9 @@ export interface IproductHandlerContext {
     products: Product[],
     createProduct: (e: React.FormEvent) => void
     getAll: () => void
-    update: (articleNumber: any) => void
-    remove: (articleNumber: any) => void
+    getSpecific: (id: string) => void
+    update: (id: any) => void
+    remove: (id: any) => void
 }
 
 export const ProductHandlerContext = createContext<IproductHandlerContext | null>(null)
@@ -40,7 +41,7 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
             },
             body: JSON.stringify(productRequest)
         })
-        if (res.status === 201) {
+        if (res.status === 200) {
             setProductRequest(productRequest_default)
         }
     }
@@ -50,6 +51,10 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         if (res.status === 200) {
             setProducts(await res.json())
         }
+    }
+
+    const getSpecific = async (id: string) => {
+        const res = await fetch(`${baseUrl}` + id)
     }
 
     const update = async (id: string) => {
@@ -69,13 +74,13 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         const res = await fetch(`${baseUrl}/${id}`, {
             method: "delete"
         })
-        if (res.status === 204) {
+        if (res.status === 200) {
             setProduct(product_default)
         }
     }
 
     return (
-        <ProductHandlerContext.Provider value={{ product, setProduct, productRequest, setProductRequest, products, createProduct, getAll, remove, update }}>
+        <ProductHandlerContext.Provider value={{ product, setProduct, productRequest, setProductRequest, products, createProduct, getAll, remove, update, getSpecific }}>
             {children}
         </ProductHandlerContext.Provider>
     )

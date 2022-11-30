@@ -26,7 +26,7 @@ function App() {
                 <Route path='/' element={<HomeView />} />
                 <Route path='/contacts' element={<ContactsView />} />
                 <Route path='/products' element={<ProductsView />} />
-                <Route path='/products/:articleNumber' element={<ProductDetailsView />} />
+                <Route path='/products/:id' element={<ProductDetailsView />} />
                 <Route path='/users' element={<UserView />} />
                 <Route path='/users/update/:id' element={<UpdateForm />} />
                 <Route path='/productsHandling' element={<ProductHandlerView />} />

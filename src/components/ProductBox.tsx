@@ -13,11 +13,11 @@ const ProductBox: React.FC<{ product: any }> = ({ product }) => {
                 <div className="card-menu">
                     <button className='nav-icon'><i className="fa-light fa-heart"></i></button>
                     <button className='nav-icon'><i className="fa-light fa-code-compare"></i></button>
-                    <button onClick={() => incrementQuantity({ articleNumber: product.articleNumber, product: product })} className='nav-icon'><i className="fa-light fa-bag-shopping"></i></button>
+                    <button onClick={() => incrementQuantity({ _id: product._id, product: product })} className='nav-icon'><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
 
                 <div className='quick-view'>
-                    <MainButton link={`/products/${product.articleNumber}`} text="QUICK VIEW" />
+                    <MainButton link={`/products/${product._id}`} text="QUICK VIEW" />
                 </div>
 
             </div>
