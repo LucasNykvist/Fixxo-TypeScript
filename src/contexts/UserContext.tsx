@@ -23,7 +23,7 @@ export const useUserContex = () => {
 
 const UserProvider = ({ children }: UserProviderProps) => {
     const baseUrl = "http://localhost:5000/api/users"
-    const user_default: User = { id: "", firstName: "", lastName: "", email: "" }
+    const user_default: User = { _id: "", firstName: "", lastName: "", email: "" }
     const userRequest_default: UserRequest = { firstName: "", lastName: "", email: "", password: "" }
 
 

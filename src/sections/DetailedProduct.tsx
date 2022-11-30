@@ -36,15 +36,15 @@ const DetailedProduct = () => {
             setQuantity(quantity - 1)
         }
     }
-    const { articleNumber } = useParams();
+    const { id } = useParams();
 
     return (
 
         <>
 
             {
-                products.filter((detailed: { articleNumber: string | undefined; }) => detailed.articleNumber === articleNumber).map((detailed: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; imageName: string | undefined; price: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; articleNumber: any; }, index: React.Key | null | undefined) => (
-                    <div className="detailed-product" key={index}>
+                products.filter((detailed: { _id: string | undefined; }) => detailed._id === id).map((detailed: { name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; imageName: string | undefined; price: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; _id: any; }, index: React.Key | null | undefined) => (
+                    <div className="detailed-product" key={id}>
                         <div className="container">
                             <div className="top">
                                 <div className="sale-offer">Get 25% OFF at the Fixxo Selection - Shop Now!</div>
@@ -99,7 +99,7 @@ const DetailedProduct = () => {
                                             <div className="current">{quantity}</div>
                                             <button onClick={increment} className="increment">+</button>
                                         </div>
-                                        <button onClick={() => incrementQuantity({ articleNumber: detailed.articleNumber, product: detailed })}>ADD TO CART</button>
+                                        <button onClick={() => incrementQuantity({ articleNumber: detailed._id, product: detailed })}>ADD TO CART</button>
                                     </div>
                                     <div className="share">
                                         <p>Share:</p>

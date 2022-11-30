@@ -1,5 +1,5 @@
 import React from 'react'
-import { IproductHandlerContext, ProductHandlerContext, useProductHandlerContext } from '../contexts/ProductHandlingContext'
+import { IproductHandlerContext, ProductHandlerContext } from '../contexts/ProductHandlingContext'
 
 const ProductCreation: React.FC = () => {
 

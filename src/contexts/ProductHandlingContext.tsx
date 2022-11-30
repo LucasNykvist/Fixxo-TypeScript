@@ -23,7 +23,7 @@ export const useProductHandlerContext = () => {
 
 const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
     const baseUrl = "http://localhost:5000/api/products"
-    const product_default = { articleNumber: "", imageName: "", category: "", price: "", name: "", description: "" }
+    const product_default = { _id: "", imageName: "", category: "", price: "", name: "", description: "" }
     const productRequest_default = { imageName: "", category: "", price: "", name: "", description: "" }
 
     const [product, setProduct] = useState<Product>(product_default)
@@ -52,8 +52,8 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         }
     }
 
-    const update = async (articleNumber: string) => {
-        const res = await fetch(`${baseUrl}/${articleNumber}`, {
+    const update = async (id: string) => {
+        const res = await fetch(`${baseUrl}/${id}`, {
             method: "put",
             headers: {
                 "content-type": "application/json"
@@ -65,8 +65,8 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         }
     }
 
-    const remove = async (articleNumber: string) => {
-        const res = await fetch(`${baseUrl}/${articleNumber}`, {
+    const remove = async (id: string) => {
+        const res = await fetch(`${baseUrl}/${id}`, {
             method: "delete"
         })
         if (res.status === 204) {
