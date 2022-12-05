@@ -22,11 +22,11 @@ const HomeView: React.FC = () => {
             <Navbar />
             <Showcase />
             <WinterNew />
-            <FeaturedProduct title='Featured Product' products={products} />
+            <FeaturedProduct title='Featured Product' />
             <PicksFlashSale />
             <OurSpecialty />
-            <FeaturedSale products={products} />
-            <FeaturedSaleReverse products={products} />
+            <FeaturedSale />
+            <FeaturedSaleReverse />
             <SeventyOff />
             <LatestBestTop products={products} />
             <Support />

@@ -2,13 +2,14 @@ import React, { useEffect } from 'react'
 import ProductBox from '../components/ProductBox'
 import { IproductHandlerContext, ProductHandlerContext } from '../contexts/ProductHandlingContext'
 
-const FeaturedProduct: React.FC<{ title: string, products: any }> = ({ title, products }) => {
+const FeaturedProduct: React.FC<{ title: string }> = ({ title }) => {
 
-    const { getAll } = React.useContext(ProductHandlerContext) as IproductHandlerContext
+    const { getFeaturedProducts, featuredProducts } = React.useContext(ProductHandlerContext) as IproductHandlerContext
+
 
     useEffect(() => {
-        getAll()
-    }, [getAll])
+        getFeaturedProducts()
+    }, [])
 
 
     return (
@@ -21,7 +22,7 @@ const FeaturedProduct: React.FC<{ title: string, products: any }> = ({ title, pr
 
                 <div className='product-boxes'>
                     {
-                        products.filter((products: object, index: number) => index < 8).map((products: any, index: React.Key | null | undefined) => <ProductBox key={index} product={products} />)
+                        featuredProducts.filter((products: object, index: number) => index < 8).map((products: any, index: React.Key | null | undefined) => <ProductBox key={index} product={products} />)
                     }
                 </div>
             </div>

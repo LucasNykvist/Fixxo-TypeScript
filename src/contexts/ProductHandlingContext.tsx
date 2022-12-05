@@ -1,3 +1,4 @@
+import { log } from 'console'
 import React, { useState, createContext, useContext } from 'react'
 import { ProductHandlerProviderProps } from '../models/ProductHandlerProviderModel'
 import { Product, ProductRequest } from '../models/ProductModel'
@@ -7,10 +8,18 @@ export interface IproductHandlerContext {
     setProduct: React.Dispatch<React.SetStateAction<Product>>
     productRequest: ProductRequest,
     setProductRequest: React.Dispatch<React.SetStateAction<ProductRequest>>,
+
     products: Product[],
+    featuredProducts: Product[],
+    fs1Products: Product[],
+    fs2Products: Product[],
+
     createProduct: (e: React.FormEvent) => void
     getAll: () => void
     getSpecific: (id: string) => void
+    getFeaturedProducts: () => void
+    getFS1Products: () => void
+    getFS2Products: () => void
     update: (id: any) => void
     remove: (id: any) => void
 }
@@ -23,14 +32,21 @@ export const useProductHandlerContext = () => {
 }
 
 const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
+    // General Declarations
     const baseUrl = "http://localhost:5000/api/products"
-    const product_default = { _id: "", imageName: "", category: "", price: "", name: "", description: "" }
-    const productRequest_default = { imageName: "", category: "", price: "", name: "", description: "" }
+    const product_default = { _id: "", imageName: "", category: "", price: "", name: "", description: "", tag: "" }
+    const productRequest_default = { imageName: "", category: "", price: "", name: "", description: "", tag: "" }
 
+    // States
     const [product, setProduct] = useState<Product>(product_default)
     const [productRequest, setProductRequest] = useState<ProductRequest>(productRequest_default)
     const [products, setProducts] = useState<Product[]>([])
+    const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
+    const [fs1Products, setFs1Products] = useState<Product[]>([])
+    const [fs2Products, setFs2Products] = useState<Product[]>([])
 
+
+    // Create Product Function
     const createProduct = async (e: React.FormEvent) => {
         e.preventDefault()
 
@@ -46,6 +62,7 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         }
     }
 
+    // GET requests
     const getAll = async () => {
         const res = await fetch(`${baseUrl}`)
         if (res.status === 200) {
@@ -57,6 +74,28 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         const res = await fetch(`${baseUrl}` + id)
     }
 
+    const getFeaturedProducts = async () => {
+        const res = await fetch("http://localhost:5000/api/products/tag/Featured")
+        if (res.status === 200) {
+            setFeaturedProducts(await res.json())
+        }
+    }
+
+    const getFS1Products = async () => {
+        const res = await fetch(`${baseUrl}/tag/FS1`)
+        if (res.status === 200) {
+            setFs1Products(await res.json())
+        }
+    }
+
+    const getFS2Products = async () => {
+        const res = await fetch(`${baseUrl}/tag/FS2`)
+        if (res.status === 200) {
+            setFs2Products(await res.json())
+        }
+    }
+
+    // Update Product Function
     const update = async (id: string) => {
         const res = await fetch(`${baseUrl}/${id}`, {
             method: "put",
@@ -70,6 +109,7 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         }
     }
 
+    // Remove Product Function
     const remove = async (id: string) => {
         const res = await fetch(`${baseUrl}/${id}`, {
             method: "delete"
@@ -80,7 +120,10 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
     }
 
     return (
-        <ProductHandlerContext.Provider value={{ product, setProduct, productRequest, setProductRequest, products, createProduct, getAll, remove, update, getSpecific }}>
+        <ProductHandlerContext.Provider value={{
+            product, setProduct, productRequest, setProductRequest, products,
+            createProduct, getAll, remove, update, getSpecific, getFeaturedProducts, getFS1Products, fs1Products, fs2Products, featuredProducts, getFS2Products
+        }}>
             {children}
         </ProductHandlerContext.Provider>
     )

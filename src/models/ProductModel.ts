@@ -4,7 +4,8 @@ export interface Product {
     category: string,
     price: string,
     name: string,
-    description: string
+    description: string,
+    tag: string
 }
 
 export interface ProductRequest {
@@ -12,5 +13,6 @@ export interface ProductRequest {
     category: string,
     price: string,
     name: string,
-    description: string
+    description: string,
+    tag: string
 }
