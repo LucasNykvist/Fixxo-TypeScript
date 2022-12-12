@@ -30,7 +30,7 @@ function App() {
                 <Route path='/users' element={<UserView />} />
                 <Route path='/users/update/:id' element={<UpdateForm />} />
                 <Route path='/productsHandling' element={<ProductHandlerView />} />
-                <Route path='/productsHandling/update/:articleNumber' element={<ProductEdit />} />
+                <Route path='/productsHandling/update/:_id' element={<ProductEdit />} />
                 <Route path='*' element={<NotFoundView />} />
               </Routes>
             </ProductHandlingProvider>
