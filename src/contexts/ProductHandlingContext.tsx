@@ -13,6 +13,9 @@ export interface IproductHandlerContext {
     featuredProducts: Product[],
     fs1Products: Product[],
     fs2Products: Product[],
+    latestProducts: Product[],
+    bestProducts: Product[],
+    topProducts: Product[]
 
     createProduct: (e: React.FormEvent) => void
     getAll: () => void
@@ -20,6 +23,9 @@ export interface IproductHandlerContext {
     getFeaturedProducts: () => void
     getFS1Products: () => void
     getFS2Products: () => void
+    getLatestProducts: () => void
+    getBestProducts: () => void
+    getTopProducts: () => void
     update: (id: any) => void
     remove: (id: any) => void
 }
@@ -44,6 +50,10 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
     const [fs1Products, setFs1Products] = useState<Product[]>([])
     const [fs2Products, setFs2Products] = useState<Product[]>([])
+
+    const [latestProducts, setLatestProducts] = useState<Product[]>([])
+    const [bestProducts, setBestProducts] = useState<Product[]>([])
+    const [topProducts, setTopProducts] = useState<Product[]>([])
 
 
     // Create Product Function
@@ -95,6 +105,27 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
         }
     }
 
+    const getLatestProducts = async () => {
+        const res = await fetch(`${baseUrl}/tag/LATEST`)
+        if (res.status === 200) {
+            setLatestProducts(await res.json())
+        }
+    }
+
+    const getBestProducts = async () => {
+        const res = await fetch(`${baseUrl}/tag/BEST`)
+        if (res.status === 200) {
+            setBestProducts(await res.json())
+        }
+    }
+
+    const getTopProducts = async () => {
+        const res = await fetch(`${baseUrl}/tag/TOP`)
+        if (res.status === 200) {
+            setTopProducts(await res.json())
+        }
+    }
+
     // Update Product Function
     const update = async (id: string) => {
         const res = await fetch(`${baseUrl}/${id}`, {
@@ -122,7 +153,7 @@ const ProductHandlingProvider = ({ children }: ProductHandlerProviderProps) => {
     return (
         <ProductHandlerContext.Provider value={{
             product, setProduct, productRequest, setProductRequest, products,
-            createProduct, getAll, remove, update, getSpecific, getFeaturedProducts, getFS1Products, fs1Products, fs2Products, featuredProducts, getFS2Products
+            createProduct, getAll, remove, update, getSpecific, getFeaturedProducts, getFS1Products, fs1Products, fs2Products, featuredProducts, getFS2Products, bestProducts, getBestProducts, getLatestProducts, getTopProducts, latestProducts, topProducts
         }}>
             {children}
         </ProductHandlerContext.Provider>

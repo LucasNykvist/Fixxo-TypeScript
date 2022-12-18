@@ -1,10 +1,15 @@
 import React from 'react'
 import { useProductContext } from '../contexts/productsContext'
 import ProductBox from '../components/ProductBox'
+import { IproductHandlerContext, ProductHandlerContext } from '../contexts/ProductHandlingContext'
 
 const AllProducts = () => {
 
-    const { products } = useProductContext()
+    const { getAll, products } = React.useContext(ProductHandlerContext) as IproductHandlerContext
+
+    React.useEffect(() => {
+        getAll()
+    }, [])
 
     return (
         <div className="container all">

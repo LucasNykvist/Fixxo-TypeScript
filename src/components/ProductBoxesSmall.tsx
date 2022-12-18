@@ -6,7 +6,7 @@ const ProductBoxesSmall: React.FC<{ products: any, title: string }> = ({ product
         <div className='product-boxes-small'>
             <h3>{title}</h3>
             {
-                products.filter((products: any, index: number) => index < 3).map((products: any, index: React.Key | null | undefined) => <ProductBoxSmall key={index} product={products} />)
+                products.map((products: any, index: React.Key | null | undefined) => <ProductBoxSmall key={index} product={products} />)
             }
         </div>
     )

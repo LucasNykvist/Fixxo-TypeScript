@@ -7,7 +7,11 @@ import { useShoppingCart } from '../contexts/shoppingCartContext';
 
 const DetailedProduct = () => {
 
-    const { products } = useProductHandlerContext() as IproductHandlerContext
+    const { products, getAll } = useProductHandlerContext() as IproductHandlerContext
+
+    React.useEffect(() => {
+        getAll()
+    }, [])
 
     const { incrementQuantity } = useShoppingCart()
 
