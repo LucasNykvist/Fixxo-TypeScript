@@ -4,8 +4,8 @@ import { useAuthContext } from "../contexts/AuthContext"
 export const useLogout = () => {
     const { dispatch } = useAuthContext()
 
-    // Logout Function
-    // Removes the item "user" from local storage and dispatch logout from the authContext
+    // Logout Funktion
+    // Tar bort  "user" från local storage och dispatch logout från authContext
     const logout = () => {
         // Remove user from storgae
         localStorage.removeItem("user")

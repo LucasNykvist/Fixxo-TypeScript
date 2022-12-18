@@ -3,17 +3,17 @@ import { authReducer, useAuthContext } from "../contexts/AuthContext"
 
 // Signup Hook
 export const useSignup = () => {
-    // State variables
+    // State variables + dispatch från authContext
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
     const { dispatch } = useAuthContext()
 
-    // User Signup Function - Email and password as params
+    // Registrerings funktion - Email and password som parametrar
     const signup = async (email: string, password: string) => {
         setIsLoading(true)
         setError(null)
 
-        // Fetch the signup endpoint
+        // Fetch signup endpoint
         const res = await fetch("http://localhost:5000/api/users/signup", {
             method: "post",
             headers: {
@@ -22,21 +22,21 @@ export const useSignup = () => {
             body: JSON.stringify({ email, password })
         })
 
-        // Save the API json response in a variable
+        // Spara API json response i en variabel
         const json = await res.json()
 
-        // If not 200 - Set error message as the error from backend
+        // Om inte 200 - Set error message som error som skickats som res från backend
         if (res.status !== 200) {
             setIsLoading(false)
             setError(json.message)
         }
 
-        // If OK 
+        // Om OK 
         if (res.status === 200) {
-            // Save user to local storage
+            // Spara user till local storage
             localStorage.setItem("user", JSON.stringify(json))
 
-            // Update AUTH context
+            // Uppdatera AUTH context
             dispatch({ type: "LOGIN", payload: json })
 
 

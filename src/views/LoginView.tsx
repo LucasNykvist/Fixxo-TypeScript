@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useLogin } from '../hooks/useLogin'
 import Navbar from '../sections/Navbar'
 
@@ -9,21 +8,15 @@ const LoginView = () => {
     const [email, setEmail] = React.useState("")
     const [password, setPassword] = React.useState("")
 
-    // What we need from the useLogin hook
+    // Vad vi behöver från useLogin Hooken
     const { login, error, isLoading } = useLogin()
 
-    // We use the navigate function from useNavigate hook do re-direct upon signup
-    const Navigate = useNavigate()
-
-    // When we submit we call the login function from useLogin hook
-    // We send the email and password state variables - Their values are the target values (Duh)
+    // När vi submittar kallar vi på login funktionen från useLogin hooken
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         await login(email, password)
         setMessage("Success")
     }
-
-
 
     return (
         <>
@@ -48,7 +41,7 @@ const LoginView = () => {
 
                     <button type='submit' disabled={isLoading} className='btn btn-dark'>Sign Up!</button>
 
-                    {/* If error variable has a value, display this HTML */}
+                    {/* Om error har eller inte har ett värde, visa detta:  */}
                     {!error && (<div className='error-message'>{message}</div>)}
                     {error && (<div className='error-message'>{error}<i className="fa-regular fa-triangle-exclamation"></i></div>)}
                 </form>

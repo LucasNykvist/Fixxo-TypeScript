@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from '../sections/Navbar'
 import { useSignup } from '../hooks/useSignup'
-import { useNavigate } from 'react-router-dom'
 
 const RegisterView = () => {
     // State variables
@@ -9,13 +8,10 @@ const RegisterView = () => {
     const [password, setPassword] = React.useState("")
     const [message, setMessage] = React.useState("")
 
-    // What we need from the signup hook
+    // Vad vi behöver från useSignup Hooken
     const { signup, error, isLoading } = useSignup()
 
-    // We use the navigate function from useNavigate hook do re-direct upon signup
-    const Navigate = useNavigate()
-
-    // We send the user inputs to the signup function
+    // Vi skickar användarens input till signup funktionen
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault()
         await signup(email, password)
