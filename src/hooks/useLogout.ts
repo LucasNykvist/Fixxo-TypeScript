@@ -1,8 +1,8 @@
-import { useAuthContext } from "../src/contexts/authContext"
+import { useAuthContext } from "../contexts/AuthContext"
 
 // Logout Hook
 export const useLogout = () => {
-    const authContext = useAuthContext()
+    const { dispatch } = useAuthContext()
 
     // Logout Function
     // Removes the item "user" from local storage and dispatch logout from the authContext
@@ -11,10 +11,7 @@ export const useLogout = () => {
         localStorage.removeItem("user")
 
         // Dispatch Logout Action
-        if (authContext && "dispatch" in authContext) {
-            authContext.dispatch({ type: "LOGOUT" })
-        }
-
+        dispatch({ type: "LOGOUT" })
     }
     return { logout }
 }

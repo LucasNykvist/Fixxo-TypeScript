@@ -11,12 +11,20 @@ interface AuthAction {
     payload?: any
 }
 
-type IauthContext = {
-    dispatch: any,
+export interface IauthContext {
     state: AuthState
+    dispatch: React.Dispatch<any>
+    user: any
 }
 
-export const AuthContext = createContext<IauthContext | null>(null)
+export const AuthContext = createContext<IauthContext>({
+    state: {
+        user: null,
+        loading: false,
+    },
+    dispatch: () => { },
+    user: null
+})
 
 export const useAuthContext = () => {
     return useContext(AuthContext)
@@ -36,7 +44,7 @@ export const authReducer = (state: any, action: any) => {
     }
 }
 
-const authContext = ({ children }: any) => {
+const AuthContextProvider = ({ children }: any) => {
     // Reducer State
     const [state, dispatch] = useReducer(authReducer, {
         user: null
@@ -58,4 +66,4 @@ const authContext = ({ children }: any) => {
     )
 }
 
-export default authContext
+export default AuthContextProvider

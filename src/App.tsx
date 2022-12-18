@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.min.css';
 import ProductEdit from './components/ProductEdit';
-import AuthContext from './contexts/authContext';
+import AuthContext from "./contexts/AuthContext"
 import ProductHandlingProvider from './contexts/ProductHandlingContext';
 import { ProductProvider } from './contexts/productsContext';
 import { ShoppingCartProvider } from './contexts/shoppingCartContext';

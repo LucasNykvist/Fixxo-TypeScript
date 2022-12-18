@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthContext } from "../src/contexts/authContext";
+import { useAuthContext } from "../contexts/AuthContext";
 
 // Hook for logging in
 export const useLogin = () => {
@@ -7,15 +7,15 @@ export const useLogin = () => {
     // State variables + dispatch from authContext
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const authContext = useAuthContext()
+    const { dispatch } = useAuthContext()
 
     // Login function - email + password as params
-    const login = async (email, password) => {
+    const login = async (email: string, password: string) => {
         setIsLoading(true)
         setError(null)
 
         // Fetch login backend logic
-        const res = await fetch("http://192.168.1.128:5000/api/users/login", {
+        const res = await fetch("http://localhost:5000/api/users/login", {
             method: "post",
             headers: {
                 "content-type": "application/json"
@@ -41,9 +41,9 @@ export const useLogin = () => {
 
             // Update AUTH context
             // We call the dispatch, what we want to send as payload to generate JWT is the json response in the logout case
-            if (authContext && "dispatch" in authContext) {
-                authContext.dispatch({ type: "LOGIN", payload: json })
-            }
+
+            dispatch({ type: "LOGIN", payload: json })
+
 
             setIsLoading(false)
         }

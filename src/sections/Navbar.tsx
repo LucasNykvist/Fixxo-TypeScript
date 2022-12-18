@@ -3,22 +3,46 @@ import Logo from '../assets/images/Logo.svg'
 import { NavLink } from 'react-router-dom'
 import NavIcon from '../components/NavIcon'
 import { useShoppingCart } from '../contexts/shoppingCartContext'
+import { useAuthContext } from '../contexts/AuthContext'
+import { useLogout } from '../hooks/useLogout'
 
 const Navbar = () => {
     const [showNavMenu, setShowNavMenu] = useState(false)
-
     const { cartQuantity } = useShoppingCart();
+    const { user } = useAuthContext()
+    const { logout } = useLogout()
 
     const toggleNavMenu = () => {
         setShowNavMenu(!showNavMenu)
     }
 
+    const handleLogout = () => {
+        logout()
+        setTimeout(() => {
+            window.location.reload()
+        })
+    }
+
     return (
         <>
             <div className="userStatus">
-                <div className="container d-flex gap-2">
-                    <NavLink to={"/login"}>Login</NavLink>
-                    <NavLink to={"/register"}>Register</NavLink>
+                <div className="container d-flex p-1">
+
+                    {
+                        user && (<div>
+                            Logged in as: <span className='text-success'>{user.email}</span>
+                            <button className='btn btn-dark' onClick={handleLogout}>Logout</button>
+                        </div>)
+                    }
+                    {
+                        !user && (<div className='d-flex gap-2'>
+                            <NavLink className="btn btn-dark" to={"/login"}>Login</NavLink>
+                            <NavLink className="btn btn-dark" to={"/register"}>Register</NavLink>
+                        </div>
+                        )
+                    }
+
+
                 </div>
             </div>
             <nav className='__navbar'>

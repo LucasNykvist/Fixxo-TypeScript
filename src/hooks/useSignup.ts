@@ -1,21 +1,20 @@
-import { useState } from "react";
-import { useAuthContext } from "../src/contexts/authContext"
+import { useReducer, useState } from "react";
+import { authReducer, useAuthContext } from "../contexts/AuthContext"
 
 // Signup Hook
 export const useSignup = () => {
     // State variables
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
-    const authContext = useAuthContext()
-
+    const { dispatch } = useAuthContext()
 
     // User Signup Function - Email and password as params
-    const signup = async (email, password) => {
+    const signup = async (email: string, password: string) => {
         setIsLoading(true)
         setError(null)
 
         // Fetch the signup endpoint
-        const res = await fetch("http://192.168.1.128:5000/api/users/signup", {
+        const res = await fetch("http://localhost:5000/api/users/signup", {
             method: "post",
             headers: {
                 "content-type": "application/json"
@@ -38,12 +37,12 @@ export const useSignup = () => {
             localStorage.setItem("user", JSON.stringify(json))
 
             // Update AUTH context
-            if (authContext && "dispatch" in authContext) {
-                authContext.dispatch({ type: "LOGIN", payload: json })
-            }
+            dispatch({ type: "LOGIN", payload: json })
+
 
             setIsLoading(false)
         }
     }
     return { signup, isLoading, error }
 }
+
